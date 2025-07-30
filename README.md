@@ -21,6 +21,12 @@
 
    https://jzsc.mohurd.gov.cn/data/company
 
+3. 中国理财网，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV1uA8jznENJ)
+
+   https://xinxipilu.chinawealth.com.cn/queryMenu/prodType?isShowEx=true
+
+   
+
 
 
 ## 机构课程

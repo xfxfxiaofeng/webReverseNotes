@@ -8,7 +8,7 @@ def aes_encrypt(plain_bytes: bytes, aes_key: bytes, aes_iv: bytes) -> bytes:
     return AES.new(aes_key, AES.MODE_CBC, aes_iv).encrypt(pad(plain_bytes, AES.block_size))
 
 
-def encrtpt_request_body(plain_text: str) -> str:
+def encrypt_request_body(plain_text: str) -> str:
     aes_key = bytes.fromhex("6257384a633633557a3749314e355239")
     aes_iv = bytes.fromhex("30303030303030303030303030303030")
     return base64.b64encode(aes_encrypt(plain_text.encode(), aes_key, aes_iv)).decode()
