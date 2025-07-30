@@ -25,7 +25,15 @@
 
    https://xinxipilu.chinawealth.com.cn/queryMenu/prodType?isShowEx=true
 
-   
+4. 信用中国，sm4加密请求参数，sm2+sm3数字签名，sm4解密二进制响应体，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV17F8oz1EKP)
+
+   https://credit.hd.gov.cn/xyxxgs/
+
+
+
+
+
+
 
 
 
