@@ -13,11 +13,13 @@
 
 ## 他人视频 & 文章
 
-1. 微博时光机热搜数据，weibotop响应体解密，AES，SHA1：from[蛋总视频](https://www.bilibili.com/video/BV17F8oz1EKP/)
+1. 微博时光机热搜数据，weibotop响应体解密，AES，SHA1；来源：[蛋总的b站视频](https://www.bilibili.com/video/BV17F8oz1EKP/)
 
    https://www.weibotop.cn/2.0/
 
+2. 全国建筑市场监管公共平台，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV17F8oz1EKP/)
 
+   https://jzsc.mohurd.gov.cn/data/company
 
 
 
