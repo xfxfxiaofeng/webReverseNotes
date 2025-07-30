@@ -29,7 +29,13 @@
 
    https://credit.hd.gov.cn/xyxxgs/
 
+5. 广东省公共资源交易平台，sha256签名，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV1dAbDzsEmm)
 
+   https://ygp.gdzwfw.gov.cn/#/44/jygg
+
+6. 承运商平台，1024次sha1密码加密，来源：蛋总群友发的
+
+   https://carrier.okguanli.com/#/login
 
 
 
