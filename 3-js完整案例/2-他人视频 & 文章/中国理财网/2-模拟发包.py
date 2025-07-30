@@ -38,7 +38,7 @@ response = requests.post(
     'https://xinxipilu.chinawealth.com.cn/platformApi/lcxp-platService/product/getProductList',
     cookies=cookies,
     headers=headers,
-    data=encrtpt_request_body(request_body),
+    data=encrypt_request_body(request_body),
 )
 print(response.text)
 print(response)
