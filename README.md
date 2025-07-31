@@ -5,6 +5,8 @@
 
 # 目录
 
+> 没啥好说的，如果你是想学习的话，做之前**建议自己做一遍**！！！！
+
 ## 自己分析 & 他人投稿
 
 
@@ -37,7 +39,9 @@
 
    https://carrier.okguanli.com/#/login
 
+7. 连连国际，登录接口password参数2次md5，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV1A3gVzSEq3)
 
+   https://global.lianlianpay.com/signin?from=global
 
 
 
