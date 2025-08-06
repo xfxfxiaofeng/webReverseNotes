@@ -3,57 +3,120 @@
 > - 本项目因其敏感性，所以不确定何时会进行private；
 > - 本项目是 部分参数的**协议逆向，python还原**；
 
-# 目录
+# 案例目录
 
 > 没啥好说的，如果你是想学习的话，做之前**建议自己做一遍**！！！！
+>
+> 你可以fork我的仓库，然后改你自己的仓库的 `你是否完成` 那一栏打勾
 
-## 自己分析 & 他人投稿
+| 平台                                      | 网址                                                         | 来源                                                         | 核心难点                                              | 文档+代码 | 你是否完成 |
+| :---------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------- | --------- | ---------- |
+| 微博时光机热搜数据                        | https://www.weibotop.cn/2.0/                               | [蛋总的b站视频](https://www.bilibili.com/video/BV17F8oz1EKP/) | 响应体sha1+aes解密                                    | √         |            |
+| 全国建筑市场监管公共平台                  | https://jzsc.mohurd.gov.cn/data/company                      | [小爬菜咦的b站视频](https://www.bilibili.com/video/BV17F8oz1EKP/) | 响应体aes解密                                         | √         |            |
+| 中国理财网                                | https://xinxipilu.chinawealth.com.cn/queryMenu/prodType?isShowEx=true | [小爬菜咦的b站视频](https://www.bilibili.com/video/BV1uA8jznENJ) | rsa+sha256的数字签名&请求体aes加密                    | √         |            |
+| 信用中国                                  | https://credit.hd.gov.cn/xyxxgs/                             | [小爬菜咦的b站视频](https://www.bilibili.com/video/BV17F8oz1EKP) | sm4加密请求参数，sm2+sm3数字签名，sm4解密二进制响应体 | √         |            |
+| 广东省公共资源交易平台                    | https://ygp.gdzwfw.gov.cn/#/44/jygg                          | [小爬菜咦的b站视频](https://www.bilibili.com/video/BV1dAbDzsEmm) | sha256签名                                            | √         |            |
+| 承运商平台                                | https://carrier.okguanli.com/#/login                         | 蛋总群友发的                                                 | 1024次sha1密码加密                                    | √         |            |
+| 连连国际                                  | https://global.lianlianpay.com/signin?from=global            | [小爬菜咦的b站视频](https://www.bilibili.com/video/BV1A3gVzSEq3) | 登录接口password参数2次md5                            | √         |            |
+| 同济医院电子化招标采购平台                | https://zbb.tjhonline.com.cn/homeNotice                      | 朋友发的表格中的                                             | aes+rsa加密请求体和解密响应体                         | √         |            |
+| 山东省潍坊商业学校智慧校园服务平台        | https://oa.sdwfsx.com/portal/#/login                         | 朋友发的表格中的                                             | 滑块（验证码登录）                                    |           |            |
+| 丁香园网sign                              | https://www.dxy.cn/bbs/newweb/pc/home                        |                                                              |                                                       |           |            |
+| 99安全中心滑块                            | https://aq.99.com/WapCenter/NDUser_Login.aspx                |                                                              |                                                       |           |            |
+| 360牛盾滑块                               | https://dun.360.cn/                                          |                                                              |                                                       |           |            |
+| 丰巢登录滑块                              | https://www.fcbox.com/                                       |                                                              |                                                       |           |            |
+| 加速乐                                    | [https://www.cnvd.org.cn/flaw/typelist?typeId=27](https://www.cnvd.org.cn/flaw/typelist) |                                                              |                                                       |           |            |
+| 虎牙滑块                                  | https://aq.huya.com/                                         |                                                              |                                                       |           |            |
+| 拉钩网滑块（极验4）+登录                  | https://passport.lagou.com/login/login.html                  |                                                              |                                                       |           |            |
+| 全国统一规范电子税务局登录+滑块           | https://tpass.guangdong.chinatax.gov.cn:8443/                |                                                              |                                                       |           |            |
+| 万达电影wasm                              | https://wandastatic.wandacinemas.com                         |                                                              |                                                       |           |            |
+| 拼多多滑块                                | https://mms.pinduoduo.com/                                   |                                                              |                                                       |           |            |
+| 中国知网                                  | https://navi.cnki.net/knavi/journals/YLBS/detail?uniplatform=NZKPT |                                                              |                                                       |           |            |
+| 中国邮政滑块                              | https://passport.11185.cn/                                   |                                                              |                                                       |           |            |
+| 知乎易盾滑块                              | https://www.chinabidding.cn/                                 |                                                              |                                                       |           |            |
+| 艺龙酒店                                  | https://secure.elong.com/                                    |                                                              |                                                       |           |            |
+| 携程                                      | https://hotels.ctrip.com/                                    |                                                              |                                                       |           |            |
+| 携程                                      | https://flights.ctrip.com/online/list/oneway-bjs-par         |                                                              |                                                       |           |            |
+| 抖查查                                    | https://www.douchacha.com/                                   |                                                              |                                                       |           |            |
+| 小盾滑块登录                              | https://www.kujiale.com/                                     |                                                              |                                                       |           |            |
+| 搜狗点选                                  | https://www.sogou.com/antispider                             |                                                              |                                                       |           |            |
+| 京东h5st                                  | https://search.jd.com/                                       |                                                              |                                                       |           |            |
+| 飞书登录pwd                               | https://accounts.feishu.cn/accounts/page/login?app_id=1&force_login=1&no_trap=1&redirect_uri=https%3A%2F%2Fwww.feishu.cn%2Fmessages |                                                              |                                                       |           |            |
+| 知乎x-zse-96                              | https://www.zhihu.com/api/v4/comment_v5/answers/1892333596557161842/root_comment?order_by=score&limit=20&offset= |                                                              |                                                       |           |            |
+| 拼多多auti_content                        | https://pifa.pinduoduo.com/                                  |                                                              |                                                       |           |            |
+| 阿里140                                   | https://xindafengche.souche.com/                             |                                                              |                                                       |           |            |
+| 阿里231                                   | https://upay.10010.com/                                      |                                                              |                                                       |           |            |
+| 阿里bx_et                                 | https://h5.ele.me/minisite/pages/index/index?spm=a2ogi.13162730.zebra-ele-login-module-9089118186&spm-pre=a2f6g.12507204.ebridge.login |                                                              |                                                       |           |            |
+| 数美设备idv4                              | https://www.donghaiair.com                                   |                                                              |                                                       |           |            |
+| 虎牙滑块                                  | https://aq.huya.com/                                         |                                                              |                                                       |           |            |
+| 美团h5[mtgsig]                            | https://h5.waimai.meituan.com/waimai/mindex/home             |                                                              |                                                       |           |            |
+| 昆明航空x-s3-s4e                          | [www.airkunming.com](http://www.airkunming.com)              |                                                              |                                                       |           |            |
+| 拉勾网鸡眼4                               | https://passport.lagou.com/login/login.html                  |                                                              |                                                       |           |            |
+| 拼多多滑块                                | https://pifa.pinduoduo.com/                                  |                                                              |                                                       |           |            |
+| 去哪儿航班Bella                           | https://flight.qunar.com                                     |                                                              |                                                       |           |            |
+| 起点小说w_tsfp                            | https://www.qidian.com                                       |                                                              |                                                       |           |            |
+| 全国电子税务局国密sm                      | https://tpass.guangdong.chinatax.gov.cn:8443                 |                                                              |                                                       |           |            |
+| 腾讯视频滑块                              | https://v.qq.com/                                            |                                                              |                                                       |           |            |
+| 国际版携程v5滑块                          | https://ct.ctrip.com/                                        |                                                              |                                                       |           |            |
+| 阿里V2                                    | https://spiderapi.cn/captcha/aliyun-v2/                      |                                                              |                                                       |           |            |
+| TK旋转                                    | https://www.tiktok.com/@abcsldafff/video/7481207983813299474 |                                                              |                                                       |           |            |
+| 天爱行为验证                              | https://captcha.tianai.cloud/                                |                                                              |                                                       |           |            |
+| qq音乐                                    | https://y.qq.com/                                            |                                                              |                                                       |           |            |
+| 爱尔兰航空aws-waf-token                   | https://www.ryanair.com/cn/zh/kyc                            |                                                              |                                                       |           |            |
+| 抖音ab（二级评论）                        | https://www.douyin.com/?recommend=1                          |                                                              |                                                       |           |            |
+| 去哪儿酒店（enBella）                     | https://touch.qunar.com/                                     |                                                              |                                                       |           |            |
+| 江西中医药大学（F14B3CEF0、F14B3CEF5）    | https://www.jxutcm.edu.cn/                                   |                                                              |                                                       |           |            |
+| 电子税务局（山盾6eMrZlPH、DTSwUOYx7MiWN） | https://dppt.fujian.chinatax.gov.cn:8443/invoice-query/invoice-query |                                                              |                                                       |           |            |
+| 易支付滑块                                | https://pay.suning.com/                                      |                                                              |                                                       |           |            |
+| 阿里V1                                    | https://memberprod.alipay.com/account/reg/email.htm          |                                                              |                                                       |           |            |
+| JJ斗地主滑块                              | https://login.jj.cn/                                         |                                                              |                                                       |           |            |
+| csdn滑块                                  | https://passport.csdn.net/login?code=applets                 |                                                              |                                                       |           |            |
+| 阿迪达斯akm                               | [www.adidas.com.cn](http://www.adidas.com.cn)                |                                                              |                                                       |           |            |
+| 惠金所                                    | https://www.hfax.com/login.html#/                            |                                                              |                                                       |           |            |
+| 1号店                                     | https://passport.yhd.com/                                    |                                                              |                                                       |           |            |
+| 学易云                                    | http://passport.xueyiyun.com/login?returnUrl=http://www.xueyiyun.com%2f |                                                              |                                                       |           |            |
+| 麻将                                      | https://tenhou.net/2/?q=1244778p49s2266z2z                   |                                                              |                                                       |           |            |
+| 催老网址练习                              | https://spa2.scrape.center/page/1                            |                                                              |                                                       |           |            |
+| 巨潮资讯                                  | http://webapi.cninfo.com.cn/#/marketDataDate                 |                                                              |                                                       |           |            |
+| 采招网                                    | [https://search.bidcenter.com.cn/search?keywords=%E8%B6%85%E5%A3%B0%E5%88%80&mod=0&page=2](https://search.bidcenter.com.cn/search?keywords=超声刀&mod=0&page=2) |                                                              |                                                       |           |            |
+| 申万宏源证券                              | https://www.swhysc.com/swhysc/financial/marginTradingList?channel=00010017000300020001&listId=1 |                                                              |                                                       |           |            |
+| 拉钩网                                    | https://www.lagou.com/wn/jobs?pn=2&cl=false&fromSearch=true&kd=python |                                                              |                                                       |           |            |
+| 新东方培训班                              | http://souke.xdf.cn/search?cityCode=430300&categoryCode=123  |                                                              |                                                       |           |            |
+| 文保考试服务平台                          | http://wwjg.wbsjk.com/#/login                                |                                                              |                                                       |           |            |
+| 考古加                                    | https://www.kaogujia.com/darenSquare/darenList               |                                                              |                                                       |           |            |
+| 七麦数据                                  | https://api.qimai.cn                                         |                                                              |                                                       |           |            |
+| 极志愿                                    | [https://www.jizhy.com/44/search?searchVal=%E6%B7%B1%E5%9C%B32](https://www.jizhy.com/44/search?searchVal=深圳2) |                                                              |                                                       |           |            |
+| 天翼云                                    | https://www.ctyun.cn/h5/auth/                                |                                                              |                                                       |           |            |
+| 贝壳网登录                                | https://login.ke.com/login?service=https://gs.zufangzi.com/cas |                                                              |                                                       |           |            |
+| 欧科云链                                  | https://www.oklink.com/cn/btc/tx-list                        |                                                              |                                                       |           |            |
+| 房天下                                    | https://passport.fang.com/                                   |                                                              |                                                       |           |            |
+| MYTOKEN                                   | https://www.mytokencap.com/                                  |                                                              |                                                       |           |            |
+| 全国招标网                                | https://ctbpsp.com/cutominfoapi/recommand/type/5/pagesize/10/currentpage/1 |                                                              |                                                       |           |            |
+| 小米应用                                  | https://app.mi.com/search                                    |                                                              |                                                       |           |            |
+| 天安财险                                  | https://tianaw.95505.cn/tacpc/#/login                        |                                                              |                                                       |           |            |
+| 幻藏                                      | https://huancang.art/#/market                                |                                                              |                                                       |           |            |
+| 爱企查Ymg_ssr参数                         | [https://aiqicha.baidu.com/s?q=%E5%B0%8F%E7%B1%B3&t=0](https://aiqicha.baidu.com/s?q=小米&t=0) |                                                              |                                                       |           |            |
+| 宁波大学统一身份认证                      | https://uis.nbu.edu.cn/authserver/login                      |                                                              |                                                       |           |            |
+| 红岭创投登录                              | https://sso.my089.com/sso/login                              |                                                              |                                                       |           |            |
+| 爱拍                                      | https://www.aipai.com/                                       |                                                              |                                                       |           |            |
+| 飞卢小说网                                | https://u.faloo.com/Regist/Login.aspx?txtUserID=151806556&txtPwd=e25e560d4d47ca4fa534488d33c32efb&txtPwd4temp=&verifyCode=5kmk&ts=1700018211&t=0&rrr=36d8a8714bd84858b50e6bce6f8ff9ae&Yc672737=1115&backurl=http://www.faloo.com/&mobileVerifyCode= |                                                              |                                                       |           |            |
+| 5173游戏登录                              | https://passport.5173.com/?returnUrl=http%3a%2f%2fsafe.5173.com%2fHome%2fIndex |                                                              |                                                       |           |            |
+| 金逸电影                                  | http://www.jycinema.com/wap/#/login                          |                                                              |                                                       |           |            |
+| 中国电信                                  | https://login.189.cn/web/login                               |                                                              |                                                       |           |            |
+| 186邮箱登录                               | https://webmail30.189.cn/w2/index.html                       |                                                              |                                                       |           |            |
+| 长虹登录                                  | https://passport.changhong.com/login.do?view=vip&service=http://cn.changhong.com&livemode=1 |                                                              |                                                       |           |            |
+| 鹏华基金登录                              | https://aj.phfund.com.cn/login.html                          |                                                              |                                                       |           |            |
+| 新商盟登录                                | http://www.xinshangmeng.com/xsm2/?Version=2019060900         |                                                              |                                                       |           |            |
+| 珍爱网                                    | https://www.zhenai.com/n/login                               |                                                              |                                                       |           |            |
+| 凤凰金融                                  | https://www.fengjr.com/cn/?showLogin=1&redirect=aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8%2FdGFyZ2V0PWh0dHBzJTNBLy9teS5mZW5nanIuY29tL2xvZ2lu |                                                              |                                                       |           |            |
+| 丰巢                                      | https://www.fcbox.com/pages/user/login.html                  |                                                              |                                                       |           |            |
+| 今日头条（科技数据）                      | https://www.toutiao.com/                                     |                                                              |                                                       |           ||
 
 
 
 
 
-## 他人视频 & 文章
 
-1. 微博时光机热搜数据，响应体sha1+aes解密；来源：[蛋总的b站视频](https://www.bilibili.com/video/BV17F8oz1EKP/)
-
-   https://www.weibotop.cn/2.0/
-
-2. 全国建筑市场监管公共平台，响应体aes解密，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV17F8oz1EKP/)
-
-   https://jzsc.mohurd.gov.cn/data/company
-
-3. 中国理财网，rsa+sha256的数字签名&请求体aes加密，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV1uA8jznENJ)
-
-   https://xinxipilu.chinawealth.com.cn/queryMenu/prodType?isShowEx=true
-
-4. 信用中国，sm4加密请求参数，sm2+sm3数字签名，sm4解密二进制响应体，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV17F8oz1EKP)
-
-   https://credit.hd.gov.cn/xyxxgs/
-
-5. 广东省公共资源交易平台，sha256签名，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV1dAbDzsEmm)
-
-   https://ygp.gdzwfw.gov.cn/#/44/jygg
-
-6. 承运商平台，1024次sha1密码加密，来源：蛋总群友发的
-
-   https://carrier.okguanli.com/#/login
-
-7. 连连国际，登录接口password参数2次md5，来源：[小爬菜咦的b站视频](https://www.bilibili.com/video/BV1A3gVzSEq3)
-
-   https://global.lianlianpay.com/signin?from=global
-
-
-
-
-
-## 机构课程
-
-### 猿来教育
-
-
-
-### 志远3期
+# 知识点学习目录
 
 
 
